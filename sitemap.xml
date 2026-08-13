@@ -1,54 +1,363 @@
----
-layout: null
-sitemap: false
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- Página inicial -->
-  <url>
-    <loc>{{ site.url | default: "https://serraautoar.com.br" }}</loc>
-    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Todas as páginas (exceto as que têm sitemap: false no front matter) -->
-  {% for page in site.pages %}
-    {% if page.sitemap != false and page.url != "/404.html" %}
-  <url>
-    <loc>{{ site.url | default: "https://serraautoar.com.br" }}{{ page.url | remove: "index.html" }}</loc>
-    {% if page.last_modified_at %}
-      <lastmod>{{ page.last_modified_at | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.date %}
-      <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    {% else %}
-      <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    {% endif %}
-    <priority>0.8</priority>
-  </url>
-    {% endif %}
-  {% endfor %}
-
-  <!-- Todos os posts JÁ PUBLICADOS ou com data de hoje ou anterior -->
-{% assign now = site.time | date: '%s' %}
-{% for post in site.posts %}
-  {% assign post_date = post.date | date: '%s' %}
-  {% if post_date <= now %}
-  <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    {% if post.last_modified_at %}
-      <lastmod>{{ post.last_modified_at | date_to_xmlschema }}</lastmod>
-    {% else %}
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  {% endif %}
-{% endfor %}
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://serraautoar.com.br/</loc>
+<lastmod>2025-07-30T11:57:40-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/compressor.html</loc>
+<lastmod>2025-07-25T11:32:15-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/condensador.html</loc>
+<lastmod>2025-07-25T11:32:10-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/googlea6b51e5c39a1cc33.html</loc>
+<lastmod>2025-12-05T15:02:54-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/modelos.html</loc>
+<lastmod>2025-07-08T19:19:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/motor-ventilador.html</loc>
+<lastmod>2025-07-25T11:32:03-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/painel-comando-ar.html</loc>
+<lastmod>2025-07-25T11:31:59-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas.html</loc>
+<lastmod>2025-07-25T11:31:53-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/_layouts/post.html</loc>
+<lastmod>2025-11-28T10:49:21-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-audi.html</loc>
+<lastmod>2025-07-25T11:15:18-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-bmw.html</loc>
+<lastmod>2025-07-25T11:15:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-chery.html</loc>
+<lastmod>2025-07-25T11:15:21-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-chevrolet.html</loc>
+<lastmod>2025-07-25T11:14:39-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-citroën.html</loc>
+<lastmod>2025-07-25T11:14:48-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-fiat.html</loc>
+<lastmod>2025-07-25T11:14:55-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-ford.html</loc>
+<lastmod>2025-07-25T11:15:01-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-honda.html</loc>
+<lastmod>2025-07-08T19:19:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-hyundai.html</loc>
+<lastmod>2025-07-25T11:15:07-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-jeep.html</loc>
+<lastmod>2025-07-25T11:15:16-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-kia.html</loc>
+<lastmod>2025-07-25T11:18:02-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-mercedes.html</loc>
+<lastmod>2025-07-25T11:18:08-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-mitsubishi.html</loc>
+<lastmod>2025-07-25T11:18:13-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-nissan.html</loc>
+<lastmod>2025-07-25T11:18:18-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-peugeot.html</loc>
+<lastmod>2025-07-08T19:19:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-ram.html</loc>
+<lastmod>2025-07-25T11:18:22-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-renault.html</loc>
+<lastmod>2025-07-25T11:18:27-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-toyota.html</loc>
+<lastmod>2025-07-25T11:18:31-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-volkswagen.html</loc>
+<lastmod>2025-07-25T11:18:38-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/compressores-volvo.html</loc>
+<lastmod>2025-07-25T11:18:46-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-audi.html</loc>
+<lastmod>2025-07-25T11:20:21-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-bmw.html</loc>
+<lastmod>2025-07-25T11:20:26-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-chery.html</loc>
+<lastmod>2025-07-25T11:20:33-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-chevrolet.html</loc>
+<lastmod>2025-07-25T11:20:39-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-citroën.html</loc>
+<lastmod>2025-07-25T11:20:45-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-fiat.html</loc>
+<lastmod>2025-07-25T11:20:50-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-ford.html</loc>
+<lastmod>2025-07-25T11:20:54-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-honda.html</loc>
+<lastmod>2025-07-25T11:20:58-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-hyundai.html</loc>
+<lastmod>2025-07-25T11:21:04-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-jeep.html</loc>
+<lastmod>2025-07-25T11:21:09-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-kia.html</loc>
+<lastmod>2025-07-25T11:22:30-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-mercedes.html</loc>
+<lastmod>2025-07-25T11:22:35-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-mitsubishi.html</loc>
+<lastmod>2025-07-25T11:22:39-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-nissan.html</loc>
+<lastmod>2025-07-25T11:22:44-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-peugeot.html</loc>
+<lastmod>2025-07-25T11:22:47-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-ram.html</loc>
+<lastmod>2025-07-25T11:22:53-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-renault.html</loc>
+<lastmod>2025-07-25T11:22:58-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-toyota.html</loc>
+<lastmod>2025-07-25T11:23:02-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-volkswagen.html</loc>
+<lastmod>2025-07-25T11:23:08-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/condensadores-volvo.html</loc>
+<lastmod>2025-07-25T11:23:12-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-audi.html</loc>
+<lastmod>2025-07-25T11:23:16-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-bmw.html</loc>
+<lastmod>2025-07-25T11:25:15-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-chery.html</loc>
+<lastmod>2025-07-25T11:25:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-chevrolet.html</loc>
+<lastmod>2025-07-25T11:25:49-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-citroën.html</loc>
+<lastmod>2025-07-25T11:25:50-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-fiat.html</loc>
+<lastmod>2025-07-25T11:25:53-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-ford.html</loc>
+<lastmod>2025-07-25T11:25:55-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-honda.html</loc>
+<lastmod>2025-07-25T11:26:02-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-hyundai.html</loc>
+<lastmod>2025-07-25T11:26:07-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-jeep.html</loc>
+<lastmod>2025-07-25T11:26:11-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-kia.html</loc>
+<lastmod>2025-07-25T11:26:13-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-mercedes.html</loc>
+<lastmod>2025-07-25T11:26:15-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-mitsubishi.html</loc>
+<lastmod>2025-07-25T11:26:17-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-nissan.html</loc>
+<lastmod>2025-07-25T11:26:19-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-peugeot.html</loc>
+<lastmod>2025-07-25T11:26:22-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-ram.html</loc>
+<lastmod>2025-07-25T11:28:13-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-renault.html</loc>
+<lastmod>2025-07-25T11:28:18-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-toyota.html</loc>
+<lastmod>2025-07-25T11:28:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-volkswagen.html</loc>
+<lastmod>2025-07-08T19:19:20-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/motor-ventilador-volvo.html</loc>
+<lastmod>2025-07-25T11:28:22-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-audi.html</loc>
+<lastmod>2025-07-25T11:28:24-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-bmw.html</loc>
+<lastmod>2025-07-25T11:28:26-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-chery.html</loc>
+<lastmod>2025-07-25T11:28:28-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-chevrolet.html</loc>
+<lastmod>2025-07-25T11:28:30-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-citroën.html</loc>
+<lastmod>2025-07-25T11:28:32-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-fiat.html</loc>
+<lastmod>2025-07-25T11:28:34-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-ford.html</loc>
+<lastmod>2025-07-25T11:28:36-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-honda.html</loc>
+<lastmod>2025-07-25T11:28:38-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-hyundai.html</loc>
+<lastmod>2025-07-25T11:28:41-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-jeep.html</loc>
+<lastmod>2025-07-25T11:30:16-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-kia.html</loc>
+<lastmod>2025-07-25T11:30:19-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-mercedes.html</loc>
+<lastmod>2025-07-25T11:30:21-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-mitsubishi.html</loc>
+<lastmod>2025-07-25T11:30:23-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-nissan.html</loc>
+<lastmod>2025-07-25T11:30:24-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-peugeot.html</loc>
+<lastmod>2025-07-25T11:30:26-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-ram.html</loc>
+<lastmod>2025-07-25T11:30:28-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-renault.html</loc>
+<lastmod>2025-07-25T11:30:29-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-toyota.html</loc>
+<lastmod>2025-07-25T11:30:31-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-volkswagen.html</loc>
+<lastmod>2025-07-25T11:30:33-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/pecas/painel-comando-ar-volvo.html</loc>
+<lastmod>2025-07-25T11:30:37-03:00</lastmod>
+</url>
+<url>
+<loc>https://serraautoar.com.br/carros/jeep-avenger-2027/</loc>
+<lastmod>2026-08-13T14:18:27-03:00</lastmod>
+</url>
 </urlset>
