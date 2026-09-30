@@ -1,0 +1,12 @@
+#Ads.txt serraautoar.com.br
+#Ads.txt managed by AdsTxtManager.com - the free ads.txt management tool for publishers
+ownerdomain=serraautoar.com.br
+contact=directsales@ezoic.com
+managerdomain=ezoic.ai
+
+ezoic.ai, 85cfd2890215d481c65e5014b8bd5cd1, DIRECT
+# 35
+google.com, pub-6644558441501035, DIRECT, f08c47fec0942fa0
+google.com, pub-1175987143200523, RESELLER, f08c47fec0942fa0
+google.com, pub-4152552776930088, DIRECT, f08c47fec0942fa0
+media.net, 8CAAT6RE8, DIRECT
